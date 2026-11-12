@@ -15,14 +15,6 @@ document.querySelectorAll('.maps-link').forEach((link) => {
   link.href = config.mapsUrl;
 });
 
-if (config.monthlyPrice) {
-  document.querySelector('#monthly-price').textContent = config.monthlyPrice;
-}
-
-if (config.privatePrice) {
-  document.querySelector('#private-price').textContent = config.privatePrice;
-}
-
 const menu = document.querySelector('.menu');
 const navigation = document.querySelector('nav');
 
@@ -68,7 +60,7 @@ form.addEventListener('submit', (event) => {
     `Hora preferida (Costa Rica): ${values.get('time')}`,
     `Nivel: ${values.get('level')}`,
     `Objetivo: ${goal}`,
-    '¿Me confirman disponibilidad y precio?',
+    '¿Me confirman disponibilidad y me envían una cotización?',
   ].join('\n');
   const url = whatsappUrl(message);
 

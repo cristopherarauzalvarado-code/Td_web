@@ -423,13 +423,7 @@ figcaption {
 .plans h3 {
   font-size: 41px;
 }
-.plans .price {
-  font-size: 29px;
-  font-weight: 600;
-  letter-spacing: -1px;
-  margin-bottom: 10px;
-}
-.plans article > p:not(.price):not(.eyebrow) {
+.plans article > p:not(.eyebrow) {
   font-size: 13px;
   max-width: 400px;
 }
