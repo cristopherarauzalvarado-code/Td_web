@@ -44,3 +44,11 @@ test('element ids are unique and there is one section per coach', () => {
   assert.match(html, /id="profesores"/);
   assert.match(html, /id="profesor-oscar"/);
 });
+
+test('each coach section shows its own photo', () => {
+  const section = (id) => html.match(new RegExp(`<section id="${id}"[\\s\\S]*?</section>`))[0];
+  assert.match(section('profesores'), /assets\/ProfeYohan\.jpeg/);
+  assert.match(section('profesor-oscar'), /assets\/ProfeOscar\.jpeg/);
+  assert.doesNotMatch(section('profesor-oscar'), /ProfeYohan/);
+  assert.doesNotMatch(html, /coach-photo-empty/, 'placeholder class left on a section with a photo');
+});
